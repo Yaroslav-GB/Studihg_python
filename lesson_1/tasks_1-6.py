@@ -22,17 +22,20 @@ seconds = time % 60
 minutes = (time//60) % 60
 hours = (time//3600)
 
-print("Вермя в формате часы:минуты:ссекунды будет:" + str(hours) + ':' + str(minutes) + ':' + str(seconds))
+print(f"Вермя в формате часы:минуты:секунды будет: {hours:02}:{minutes:02}:{seconds:02}")#нове решение
+# старое решение: print("Вермя в формате часы:минуты:ссекунды будет:"
+# + str(hours) + ':' + str(minutes) + ':' + str(seconds))
 
 print(lesson1[2])
 
 num = input("Введите число N ")
 
-num = str(num)
+#num = str(num) - убрал, работает!
 a = num + num
 b = num + num + num
 total = int(num) + int(a) + int(b)
-print("Сумма чисе N+NN+NNN= " + str(total))
+print(f"Сумма чисе N+NN+NNN= {total}") #применил f форматирование
+#print("Сумма чисе N+NN+NNN= " + str(total))
 
 print(lesson1[3])
 
@@ -52,7 +55,7 @@ print(lesson1[4])
 
 revenue = int(input("Введите выручку фирмы "))
 cost = int(input("Введите издержки фирмы "))
-profit1 = round(revenue/cost, 2)
+profit1 = round(revenue - cost, 2)#Точно! Ну бывает...
 
 if revenue > cost:
     print(f"Фирма работает с прибылью. Рентабельность выручки составила {profit1}")
@@ -66,12 +69,12 @@ else:
 
 print(lesson1[5])
 
-a = float(input("Введите результаты первой пробежки спортсмена в км "))
-b = float(input("Введите необходимый результат спортсмена в км "))
+startRun = float(input("Введите результаты первой пробежки спортсмена в км "))#заменил названия переменных
+resultRun = float(input("Введите необходимый результат спортсмена в км "))
 days = 1
-km = a
-while km < b:
-        a = a + 0.1 * a
+km = startRun
+while km < resultRun:
+        startRun = startRun + 0.1 * startRun
         days += 1
-        km = km + a
-print(f"В результате тренировок вы пребежите {b}км на {days} день")
+        km = km + startRun
+print(f"В результате тренировок вы пребежите {resultRun}км на {days} день")
