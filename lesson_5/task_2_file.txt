@@ -1,0 +1,4 @@
+stroka_1 word_1
+stroka_2 word_2 word_3
+stroka_3 word_4 word_5
+stroka_4 word_6 word_7 word_8 word_9
