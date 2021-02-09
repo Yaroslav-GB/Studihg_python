@@ -18,6 +18,7 @@
 Подсказка: использовать менеджеры контекста.
 
 """
+import json
 profit_list_for_average = []
 firm_list = []
 profit_list = []
@@ -33,6 +34,13 @@ with open("task_7_file.txt", "r", encoding="utf8") as fp:
         else:
             pass
 
-print(profit_list)
+average_profit = {'average_profit': round(sum(map(int, profit_list_for_average))
+                           / len(profit_list_for_average))}
 
-print(firm_list)
+with open("task_7_file.json", "w") as fp:
+    json.dump(dict(zip(firm_list, profit_list)), fp)
+
+with open("task_7_file.json", "r") as fp:
+    data = json.load(fp)
+    print([data, average_profit])
+
