@@ -1,0 +1,6 @@
+HP,LaserJet
+HP,DeskJet
+Epson,L805
+HP,LaserJet,0011Б,Бухгалтерия
+HP,DeskJet,002Б,Бухгалтерия
+Epson,L805,003Р,Ресепшн
