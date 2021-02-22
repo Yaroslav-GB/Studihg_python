@@ -63,71 +63,6 @@ class Storage():
                     line = line.split('\n')
                     for i in line:
                         if i != '':
-                """
-
-4. Начните работу над проектом «Склад оргтехники». Создайте класс,
-описывающий склад. А также класс «Оргтехника», который будет базовым
-для классов-наследников. Эти классы — конкретные типы оргтехники
-(принтер, сканер, ксерокс). В базовом классе определить параметры,
-общие для приведенных типов. В классах-наследниках реализовать параметры,
-уникальные для каждого типа оргтехники.
-
-начало ----> получение твоара ----> хранение и учет ----> выдача товара ----> конец
-"""
-
-
-class OfficeEquipment:
-    def __init__(self, name, model):
-        self.name = name
-        self.model = model
-
-
-class Storage():
-    def __init__(self, type):
-        self.type = type
-        if self.type == 'принтер':
-            self.to_take_printer_from_txt()
-        elif self.type == 'сканер':
-            self.to_take_scanner_from_txt()
-        elif self.type == 'ксерокс':
-            self.to_take_copier_from_txt()
-
-    def to_take_printer_from_txt(self):
-        with open("printer_file.txt", "r", encoding="utf-8") as fp:
-            with open("printer_file_inventory.txt", "w", encoding="utf-8") as fp2:
-                storage_list = []
-                for line in fp:
-                    line = line.split('\n')
-                    for i in line:
-                        if i != '':
-                            storage_list.append(i + ',')
-                    user_inventory = input('Введите присваиваемы инвентарный номер: \n')
-                    user_dept = input('Введите к какому отделу прикрепить: \n')
-                    storage_list.append(user_inventory + ',' + user_dept + '\n')
-                fp2.writelines(storage_list)
-
-    def to_take_scanner_from_txt(self):
-        storage_list = []
-        with open("scanner_file.txt", "r", encoding="utf-8") as fp:
-            with open("scanner_file_inventory.txt", "w", encoding="utf-8") as fp2:
-                for line in fp:
-                    line = line.split('\n')
-                    for i in line:
-                        if i != '':
-                            storage_list.append(i + ',')
-                    user_inventory = input('Введите присваиваемы инвентарный номер: \n')
-                    user_dept = input('Введите к какому отделу прикрепить: \n')
-                    storage_list.append(user_inventory + ',' + user_dept + '\n')
-                fp2.writelines(storage_list)
-
-    def to_take_copier_from_txt(self):
-        storage_list = []
-        with open("copier_file.txt", "r", encoding="utf-8") as fp:
-            with open("copier_file_inventory.txt", "w", encoding="utf-8") as fp2:
-                for line in fp:
-                    line = line.split('\n')
-                    for i in line:
-                        if i != '':
                             storage_list.append(i + ',')
                     user_inventory = input('Введите присваиваемы инвентарный номер: \n')
                     user_dept = input('Введите к какому отделу прикрепить: \n')
@@ -250,8 +185,8 @@ def to_enumerate_content_storage():
         for line in enumerate(fp, 1):
             print(f'На складе сейчас зарегистрирована следующая техника: \n{line}')
 
-# adding_equipment_to_storage()
+adding_equipment_to_storage()
 to_start_inventory_equipment()
-# ReviewStorage.to_chek_equipment_inventoried_storage()
+to_chek_equipment_inventoried_storage()
 to_enumerate_content_storage()
 
