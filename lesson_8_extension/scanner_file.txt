@@ -1,0 +1,2 @@
+Canon,imageFORMULA DR-F120
+Epson,FastFoto FF-680W
